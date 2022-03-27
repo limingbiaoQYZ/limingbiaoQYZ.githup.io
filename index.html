@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>用户登录</title>
+		<link rel="stylesheet" type="text/css" href="./layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+
+		<script src="./layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				background-color: #0C0C0C;
+			}
+
+			.layui-fluid {
+				height: 548px;
+				background-color: #0C0C0C;
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.reg-big-box {
+				background-color: #fff;
+				height: 370px;
+				width: 50%;
+				border-radius: 10px;
+				margin: auto;
+				padding-top: 30px;
+				padding-bottom: 10px;
+				padding-left: 50px;
+				padding-right: 50px;
+			}
+
+			.reg-from-box {
+				width: 380px;
+				height: 200px;
+				margin: auto;
+				text-align: center;
+
+			}
+
+			.layui-inline {
+				padding-top: 10px;
+			}
+
+			.loginMianImgBg {
+				background-image: url(./Images/loginMainImg.png);
+				background-repeat: no-repeat;
+				width: 200px;
+				height: 350px;
+				background-size: contain;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="layui-fluid">
+			<div class="layui-box reg-big-box">
+				<div class="layui-row">
+					<!-- 左边栏 -->
+					<div class="layui-col-md5 loginMianImgBg">
+
+					</div>
+
+					<!-- 右边栏 -->
+					<div class="layui-col-md7">
+						<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+							<ul class="layui-tab-title">
+								<li class="layui-this h1" style="font-weight: bold;font-size: 20px;">密码登录</li>
+								<li class="h1" style="font-weight: bold;font-size: 20px;">验证码登录</li>
+
+							</ul>
+							<div class="layui-tab-content" style="height: 100px;">
+								<div class="layui-tab-item layui-show">
+									<div class="layui-box reg-from-box">
+										</br>
+										<form class="layui-form " action="">
+
+											<div class="layui-inline">
+												<div class="layui-input-inline">
+													<input type="text" style="width: 290px; font-size: 10px;" name="authCode" lay-verify="required"
+													 autocomplete="off" class="layui-input" placeholder="手机号/邮箱">
+												</div>
+											</div>
+
+											<div class="layui-inline">
+												<div class="layui-input-inline">
+													<input type="password" style="width: 290px; font-size: 10px;" name="password" lay-verify="required"
+													 placeholder="请输入您的密码" autocomplete="off" class="layui-input">
+												</div>
+											</div>
+
+
+											<div class="layui-inline">
+												<div class="layui-input-inline">
+													<input type="checkbox" name="isTrue" lay-skin="primary" title="我同意 TideShoe 的隐私政策和使用条款">
+												</div>
+											</div>
+
+
+
+
+											<div class="layui-inline">
+												<button class="layui-btn" style="width: 290px; background-color: #000000;color: fff;" lay-submit=""
+												 lay-filter="login-password">登录</button>
+											</div>
+
+											<div class="layui-inline">
+												<h6 style="font-size: 5px;">还不是会员？<a href="register.html" class="layui-text" style="text-decoration: underline;color: #000000; font-size: 5px;">立即加入</a></h6>
+											</div>
+										</form>
+									</div>
+
+								</div>
+
+								<div class="layui-tab-item">
+									<div class="layui-box reg-from-box">
+										</br>
+										<form class="layui-form " action="">
+
+											<div class="layui-inline">
+												<div class="layui-input-inline">
+													<input type="tel" style="width: 290px; font-size: 10px;" name="phone" lay-verify="required|phone"
+													 autocomplete="off" class="layui-input" placeholder="请输入您的手机号码">
+												</div>
+											</div>
+
+											<div class="layui-inline">
+												<div class="layui-input-inline">
+													<input type="text" style="width: 290px; font-size: 10px;" name="authCode" lay-verify="required"
+													 placeholder="请输入手机验证码" autocomplete="off" class="layui-input">
+												</div>
+											</div>
+
+											<div class="layui-inline">
+												<div class="layui-input-inline">
+													<input type="checkbox" name="isTrue" lay-skin="primary" title="我同意 TideShoe 的隐私政策和使用条款">
+												</div>
+											</div>
+
+											<div class="layui-inline">
+												<button class="layui-btn" style="width: 290px; background-color: #000000;color: fff;" lay-submit=""
+												 lay-filter="login-authCode">登录</button>
+											</div>
+
+											<div class="layui-inline">
+												<h6 style="font-size: 5px;">还不是会员？<a href="#" class="layui-text" style="text-decoration: underline;color: #000000; font-size: 5px;">立即加入</a></h6>
+											</div>
+										</form>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<script>
+			layui.use('element', function() {
+				var $ = layui.jquery,
+					element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+				//触发事件
+				var active = {
+					tabAdd: function() {
+						//新增一个Tab项
+						element.tabAdd('demo', {
+							title: '新选项' + (Math.random() * 1000 | 0) //用于演示
+								,
+							content: '内容' + (Math.random() * 1000 | 0),
+							id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+						})
+					},
+					tabDelete: function(othis) {
+						//删除指定Tab项
+						element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+						othis.addClass('layui-btn-disabled');
+					},
+					tabChange: function() {
+						//切换到指定Tab项
+						element.tabChange('demo', '22'); //切换到：用户管理
+					}
+				};
+
+				$('.site-demo-active').on('click', function() {
+					var othis = $(this),
+						type = othis.data('type');
+					active[type] ? active[type].call(this, othis) : '';
+				});
+
+				//Hash地址的定位
+				var layid = location.hash.replace(/^#test=/, '');
+				element.tabChange('test', layid);
+
+				element.on('tab(test)', function(elem) {
+					location.hash = 'test=' + $(this).attr('lay-id');
+				});
+
+			});
+
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
+
+				//日期
+				laydate.render({
+					elem: '#date'
+				});
+				laydate.render({
+					elem: '#date1'
+				});
+
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+
+				//自定义验证规则
+				form.verify({
+					title: function(value) {
+						if (value.length < 5) {
+							return '标题至少得5个字符啊';
+						}
+					},
+					pass: [/(.+){6,12}$/, '密码必须6到12位'],
+					content: function(value) {
+						layedit.sync(editIndex);
+					}
+				});
+
+				//监听指定开关
+				form.on('switch(switchTest)', function(data) {
+					layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+						offset: '6px'
+					});
+					layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+				});
+
+				//监听提交
+				form.on('submit(login-password)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+
+				//监听提交
+				form.on('submit(login-authCode)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+
+			});
+		</script>
+
+	</body>
+</html>

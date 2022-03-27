@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.grid {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+.grid-cell-1,
+.grid-cell-2,
+.grid-cell-3,
+.grid-cell-4,
+.grid-cell-5,
+.grid-cell-6 {
+	flex-shrink: 1;
+}
+
+.grid-cell-1 {
+	flex-grow: 1;
+}
+
+.grid-cell-2 {
+	flex-grow: 2;
+}
+
+.grid-cell-3 {
+	flex-grow: 3;
+}
+
+.grid-cell-4 {
+	flex-grow: 4;
+}
+
+.grid-cell-5 {
+	flex-grow: 5;
+}
+
+.grid-cell-6 {
+	flex-grow: 6;
+}
+.perch{
+	width: 100%;
+	height: 40px;
+}
+.header__top {
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	background-color: #e3e3e3;
+	text-align: center;
+	line-height: 40px;
+	box-shadow: 0px 5px 10px #959595;
+	margin-bottom: 10px;
+	z-index: 99;
+	opacity: 0.8;
+}
+
+.layui-icon-down:before {
+	content: "\e61a";
+}
+
+.header__bottom {
+	line-height: 100px;
+	text-align: center;
+	background-color: #393d49;
+}
+
+#seachForm {
+	position: relative;
+}
+
+.input-text {
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	height: 40px;
+	width: 170px;
+	border-radius: 50px;
+	outline: none;
+	border: 0;
+	background-color: #e6e6e6;
+	padding-left: 40px;
+	opacity: 0.5;
+
+}
+
+.input-text:hover {
+	opacity: 1;
+}
+
+.input-submit {
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	width: 40px;
+	height: 40px;
+	background:url(../Images/fangdajing.png);
+	border: 0;
+	border-radius: 50%;
+	opacity: 0.5;
+	background-color: #e6e6e6;
+}
+
+.input-submit:hover {
+	opacity: 1;
+}
+
+.header__nav {
+	background-color: #fff;
+	color: #000000;
+}
+
+.content__banner {
+	width: 100%;
+	height: 400px;
+}
+
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@media (min-width: 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+.footer-box{
+	width: 100%;
+	height: 300px;
+	background-color: #000000;
+	color: #fff;
+}
+.card-scale{
+	transition: all .3s;
+}
+.card-scale:hover{
+	transform: scale(1.1);
+}
+.featurette-divider{
+	width: 100%;
+	background-color: #9d8785;
+	margin: 5em 0;
+}
